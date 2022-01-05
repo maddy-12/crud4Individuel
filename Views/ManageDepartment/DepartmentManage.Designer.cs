@@ -30,7 +30,7 @@ namespace CrudBloc4.Views.ManageDepartment
         private void InitializeComponent()
         {
             this.lblDepartment = new System.Windows.Forms.Label();
-            this.txtDep = new System.Windows.Forms.TextBox();
+            this.txt_DeptName = new System.Windows.Forms.TextBox();
             this.btnAddDep = new System.Windows.Forms.Button();
             this.dtgvDep = new System.Windows.Forms.DataGridView();
             this.btnCancelDep = new System.Windows.Forms.Button();
@@ -50,12 +50,12 @@ namespace CrudBloc4.Views.ManageDepartment
             this.lblDepartment.TabIndex = 0;
             this.lblDepartment.Text = "Services";
             // 
-            // txtDep
+            // txt_DeptName
             // 
-            this.txtDep.Location = new System.Drawing.Point(206, 103);
-            this.txtDep.Name = "txtDep";
-            this.txtDep.Size = new System.Drawing.Size(372, 22);
-            this.txtDep.TabIndex = 1;
+            this.txt_DeptName.Location = new System.Drawing.Point(206, 103);
+            this.txt_DeptName.Name = "txt_DeptName";
+            this.txt_DeptName.Size = new System.Drawing.Size(372, 22);
+            this.txt_DeptName.TabIndex = 1;
             // 
             // btnAddDep
             // 
@@ -82,6 +82,7 @@ namespace CrudBloc4.Views.ManageDepartment
             this.dtgvDep.RowTemplate.Height = 24;
             this.dtgvDep.Size = new System.Drawing.Size(660, 175);
             this.dtgvDep.TabIndex = 3;
+            this.dtgvDep.DoubleClick += new System.EventHandler(this.dtgvDep_DoubleClick);
             // 
             // btnCancelDep
             // 
@@ -94,6 +95,7 @@ namespace CrudBloc4.Views.ManageDepartment
             this.btnCancelDep.TabIndex = 4;
             this.btnCancelDep.Text = "Annuler";
             this.btnCancelDep.UseVisualStyleBackColor = false;
+            this.btnCancelDep.Click += new System.EventHandler(this.btnCancelDep_Click);
             // 
             // btnUpdateDep
             // 
@@ -106,6 +108,7 @@ namespace CrudBloc4.Views.ManageDepartment
             this.btnUpdateDep.TabIndex = 5;
             this.btnUpdateDep.Text = "Modifier";
             this.btnUpdateDep.UseVisualStyleBackColor = false;
+            this.btnUpdateDep.Click += new System.EventHandler(this.btnUpdateDep_Click);
             // 
             // btnDeleteDep
             // 
@@ -118,6 +121,7 @@ namespace CrudBloc4.Views.ManageDepartment
             this.btnDeleteDep.TabIndex = 6;
             this.btnDeleteDep.Text = "Supprimer";
             this.btnDeleteDep.UseVisualStyleBackColor = false;
+            this.btnDeleteDep.Click += new System.EventHandler(this.btnDeleteDep_Click);
             // 
             // label1
             // 
@@ -140,7 +144,7 @@ namespace CrudBloc4.Views.ManageDepartment
             this.Controls.Add(this.btnCancelDep);
             this.Controls.Add(this.dtgvDep);
             this.Controls.Add(this.btnAddDep);
-            this.Controls.Add(this.txtDep);
+            this.Controls.Add(this.txt_DeptName);
             this.Controls.Add(this.lblDepartment);
             this.Name = "DepartmentManage";
             this.Text = "DepartmentManage";
@@ -154,7 +158,7 @@ namespace CrudBloc4.Views.ManageDepartment
         #endregion
 
         private System.Windows.Forms.Label lblDepartment;
-        private System.Windows.Forms.TextBox txtDep;
+        private System.Windows.Forms.TextBox txt_DeptName;
         private System.Windows.Forms.Button btnAddDep;
         private System.Windows.Forms.DataGridView dtgvDep;
         private System.Windows.Forms.Button btnCancelDep;
