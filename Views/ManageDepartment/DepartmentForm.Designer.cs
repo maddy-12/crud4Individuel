@@ -1,7 +1,7 @@
 ﻿
 namespace CrudBloc4.Views.ManageDepartment
 {
-    partial class DepartmentManage
+    partial class DepartmentForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,6 @@ namespace CrudBloc4.Views.ManageDepartment
             this.btnAddDep = new System.Windows.Forms.Button();
             this.dtgvDep = new System.Windows.Forms.DataGridView();
             this.btnCancelDep = new System.Windows.Forms.Button();
-            this.btnUpdateDep = new System.Windows.Forms.Button();
             this.btnDeleteDep = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDep)).BeginInit();
@@ -89,7 +88,7 @@ namespace CrudBloc4.Views.ManageDepartment
             this.btnCancelDep.BackColor = System.Drawing.Color.MediumPurple;
             this.btnCancelDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelDep.ForeColor = System.Drawing.Color.White;
-            this.btnCancelDep.Location = new System.Drawing.Point(206, 373);
+            this.btnCancelDep.Location = new System.Drawing.Point(261, 373);
             this.btnCancelDep.Name = "btnCancelDep";
             this.btnCancelDep.Size = new System.Drawing.Size(127, 35);
             this.btnCancelDep.TabIndex = 4;
@@ -97,25 +96,12 @@ namespace CrudBloc4.Views.ManageDepartment
             this.btnCancelDep.UseVisualStyleBackColor = false;
             this.btnCancelDep.Click += new System.EventHandler(this.btnCancelDep_Click);
             // 
-            // btnUpdateDep
-            // 
-            this.btnUpdateDep.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnUpdateDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateDep.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateDep.Location = new System.Drawing.Point(353, 373);
-            this.btnUpdateDep.Name = "btnUpdateDep";
-            this.btnUpdateDep.Size = new System.Drawing.Size(127, 35);
-            this.btnUpdateDep.TabIndex = 5;
-            this.btnUpdateDep.Text = "Modifier";
-            this.btnUpdateDep.UseVisualStyleBackColor = false;
-            this.btnUpdateDep.Click += new System.EventHandler(this.btnUpdateDep_Click);
-            // 
             // btnDeleteDep
             // 
             this.btnDeleteDep.BackColor = System.Drawing.Color.DarkRed;
             this.btnDeleteDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteDep.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteDep.Location = new System.Drawing.Point(497, 373);
+            this.btnDeleteDep.Location = new System.Drawing.Point(409, 373);
             this.btnDeleteDep.Name = "btnDeleteDep";
             this.btnDeleteDep.Size = new System.Drawing.Size(127, 35);
             this.btnDeleteDep.TabIndex = 6;
@@ -140,7 +126,6 @@ namespace CrudBloc4.Views.ManageDepartment
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDeleteDep);
-            this.Controls.Add(this.btnUpdateDep);
             this.Controls.Add(this.btnCancelDep);
             this.Controls.Add(this.dtgvDep);
             this.Controls.Add(this.btnAddDep);
@@ -162,7 +147,6 @@ namespace CrudBloc4.Views.ManageDepartment
         private System.Windows.Forms.Button btnAddDep;
         private System.Windows.Forms.DataGridView dtgvDep;
         private System.Windows.Forms.Button btnCancelDep;
-        private System.Windows.Forms.Button btnUpdateDep;
         private System.Windows.Forms.Button btnDeleteDep;
         private System.Windows.Forms.Label label1;
     }

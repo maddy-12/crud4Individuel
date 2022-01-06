@@ -1,5 +1,6 @@
 ﻿using CrudBloc4.Views;
 using CrudBloc4.Views.ManageDepartment;
+using CrudBloc4.Views.ManageEmployee;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +28,13 @@ namespace CrudBloc4
 
         private void gérerLesServicesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DepartmentManage form = new DepartmentManage();
+            DepartmentForm form = new DepartmentForm();
+            form.Show();
+        }
+
+        private void gestionDesSalariésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EmployeeForm form = new EmployeeForm();
             form.Show();
         }
     }

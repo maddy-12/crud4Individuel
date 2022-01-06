@@ -34,6 +34,8 @@ namespace CrudBloc4
             this.gérerLesSiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.servicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gérerLesServicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salariésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDesSalariésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +44,8 @@ namespace CrudBloc4
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sitesToolStripMenuItem,
-            this.servicesToolStripMenuItem});
+            this.servicesToolStripMenuItem,
+            this.salariésToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -79,6 +82,21 @@ namespace CrudBloc4
             this.gérerLesServicesToolStripMenuItem.Text = "Gérer les services";
             this.gérerLesServicesToolStripMenuItem.Click += new System.EventHandler(this.gérerLesServicesToolStripMenuItem_Click);
             // 
+            // salariésToolStripMenuItem
+            // 
+            this.salariésToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionDesSalariésToolStripMenuItem});
+            this.salariésToolStripMenuItem.Name = "salariésToolStripMenuItem";
+            this.salariésToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.salariésToolStripMenuItem.Text = "Salariés";
+            // 
+            // gestionDesSalariésToolStripMenuItem
+            // 
+            this.gestionDesSalariésToolStripMenuItem.Name = "gestionDesSalariésToolStripMenuItem";
+            this.gestionDesSalariésToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.gestionDesSalariésToolStripMenuItem.Text = "Gestion des salariés";
+            this.gestionDesSalariésToolStripMenuItem.Click += new System.EventHandler(this.gestionDesSalariésToolStripMenuItem_Click);
+            // 
             // FormApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -102,6 +120,8 @@ namespace CrudBloc4
         private System.Windows.Forms.ToolStripMenuItem gérerLesSiteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem servicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gérerLesServicesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salariésToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDesSalariésToolStripMenuItem;
     }
 }
 

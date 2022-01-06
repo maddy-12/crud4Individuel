@@ -11,11 +11,11 @@ using System.Data.SqlClient;
 
 namespace CrudBloc4.Views.ManageDepartment
 {
-    public partial class DepartmentManage : Form
+    public partial class DepartmentForm : Form
     {
         string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Benaf\OneDrive\Documents\Cours cesi\projetBloc4Individuel\database_projet4.mdf;Integrated Security=True;Connect Timeout=30";
         private int Id = 0;
-        public DepartmentManage()
+        public DepartmentForm()
         {
             InitializeComponent();
         }
@@ -52,12 +52,14 @@ namespace CrudBloc4.Views.ManageDepartment
             }
         }
 
+
         private void DepartmentManage_Load(object sender, EventArgs e)
         {
             Clear();
             GridFill();
         }
 
+        //Vider les champs après soumission
         void Clear()
         {
             txt_DeptName.Text = "";
@@ -73,32 +75,31 @@ namespace CrudBloc4.Views.ManageDepartment
                 txt_DeptName.Text = dtgvDep.CurrentRow.Cells[1].Value.ToString();
                 Id = Convert.ToInt32(dtgvDep.CurrentRow.Cells[0].Value.ToString());
                 btnDeleteDep.Enabled = true;
+                btnAddDep.Text = "Modifier";
+
             }
         }
 
+        //Annuler
         private void btnCancelDep_Click(object sender, EventArgs e)
         {
             Clear();
         }
-
-        private void btnUpdateDep_Click(object sender, EventArgs e)
-        {
-
-        }
-
+ 
+        //Supprimer
         private void btnDeleteDep_Click(object sender, EventArgs e)
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {   
                 sqlCon.Open();
-                SqlCommand sqlCmd = new SqlCommand("DepAdd", sqlCon);
+                SqlCommand sqlCmd = new SqlCommand("DepDeleteById", sqlCon);
                 sqlCmd.CommandType = CommandType.StoredProcedure;
                 sqlCmd.Parameters.AddWithValue("@IdDep", Id);
-                sqlCmd.Parameters.AddWithValue("@depName", txt_DeptName.Text.Trim());
                 sqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Service supprimer avec succès");
-                GridFill();
                 Clear();
+                GridFill();
+               
             }
         }
 
