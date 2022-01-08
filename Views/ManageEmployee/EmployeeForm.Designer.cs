@@ -43,7 +43,7 @@ namespace CrudBloc4.Views.ManageEmployee
             this.txt_FNameEmp = new System.Windows.Forms.TextBox();
             this.txt_phoneEmp = new System.Windows.Forms.TextBox();
             this.txt_mobileEmpl = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_searchEmpl = new System.Windows.Forms.TextBox();
             this.txt_emailEmp = new System.Windows.Forms.TextBox();
             this.btnAddEmp = new System.Windows.Forms.Button();
             this.dtgvEmpl = new System.Windows.Forms.DataGridView();
@@ -185,12 +185,12 @@ namespace CrudBloc4.Views.ManageEmployee
             this.txt_mobileEmpl.Size = new System.Drawing.Size(164, 22);
             this.txt_mobileEmpl.TabIndex = 29;
             // 
-            // textBox5
+            // txt_searchEmpl
             // 
-            this.textBox5.Location = new System.Drawing.Point(182, 273);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(455, 22);
-            this.textBox5.TabIndex = 30;
+            this.txt_searchEmpl.Location = new System.Drawing.Point(182, 273);
+            this.txt_searchEmpl.Name = "txt_searchEmpl";
+            this.txt_searchEmpl.Size = new System.Drawing.Size(455, 22);
+            this.txt_searchEmpl.TabIndex = 30;
             // 
             // txt_emailEmp
             // 
@@ -221,30 +221,33 @@ namespace CrudBloc4.Views.ManageEmployee
             this.dtgvEmpl.RowTemplate.Height = 24;
             this.dtgvEmpl.Size = new System.Drawing.Size(731, 125);
             this.dtgvEmpl.TabIndex = 38;
+            this.dtgvEmpl.DoubleClick += new System.EventHandler(this.dtgvEmpl_DoubleClick);
             // 
             // btnCancelEmp
             // 
             this.btnCancelEmp.BackColor = System.Drawing.Color.MediumPurple;
             this.btnCancelEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelEmp.ForeColor = System.Drawing.Color.White;
-            this.btnCancelEmp.Location = new System.Drawing.Point(213, 455);
+            this.btnCancelEmp.Location = new System.Drawing.Point(282, 455);
             this.btnCancelEmp.Name = "btnCancelEmp";
             this.btnCancelEmp.Size = new System.Drawing.Size(133, 34);
             this.btnCancelEmp.TabIndex = 36;
             this.btnCancelEmp.Text = "Annuler";
             this.btnCancelEmp.UseVisualStyleBackColor = false;
+            this.btnCancelEmp.Click += new System.EventHandler(this.btnCancelEmp_Click);
             // 
             // btnDeleteEmp
             // 
             this.btnDeleteEmp.BackColor = System.Drawing.Color.DarkRed;
             this.btnDeleteEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteEmp.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteEmp.Location = new System.Drawing.Point(370, 455);
+            this.btnDeleteEmp.Location = new System.Drawing.Point(436, 455);
             this.btnDeleteEmp.Name = "btnDeleteEmp";
             this.btnDeleteEmp.Size = new System.Drawing.Size(133, 35);
             this.btnDeleteEmp.TabIndex = 37;
             this.btnDeleteEmp.Text = "Supprimer";
             this.btnDeleteEmp.UseVisualStyleBackColor = false;
+            this.btnDeleteEmp.Click += new System.EventHandler(this.btnDeleteEmp_Click);
             // 
             // btnSearchEmp
             // 
@@ -257,6 +260,7 @@ namespace CrudBloc4.Views.ManageEmployee
             this.btnSearchEmp.TabIndex = 35;
             this.btnSearchEmp.Text = "Rechercher";
             this.btnSearchEmp.UseVisualStyleBackColor = false;
+            this.btnSearchEmp.Click += new System.EventHandler(this.btnSearchEmp_Click);
             // 
             // comboBox_site
             // 
@@ -328,7 +332,7 @@ namespace CrudBloc4.Views.ManageEmployee
             this.Controls.Add(this.btnSearchEmp);
             this.Controls.Add(this.btnAddEmp);
             this.Controls.Add(this.txt_emailEmp);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txt_searchEmpl);
             this.Controls.Add(this.txt_mobileEmpl);
             this.Controls.Add(this.txt_phoneEmp);
             this.Controls.Add(this.txt_FNameEmp);
@@ -371,7 +375,7 @@ namespace CrudBloc4.Views.ManageEmployee
         private System.Windows.Forms.TextBox txt_FNameEmp;
         private System.Windows.Forms.TextBox txt_phoneEmp;
         private System.Windows.Forms.TextBox txt_mobileEmpl;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_searchEmpl;
         private System.Windows.Forms.TextBox txt_emailEmp;
         private System.Windows.Forms.Button btnAddEmp;
         private System.Windows.Forms.DataGridView dtgvEmpl;

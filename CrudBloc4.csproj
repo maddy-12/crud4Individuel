@@ -60,6 +60,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>database_projet4DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="database_projet4DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>database_projet4DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="database_projet4DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>database_projet4DataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormApplication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +138,28 @@
     </None>
     <None Include="database_projet4DataSet1.xss">
       <DependentUpon>database_projet4DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="database_projet4DataSet2.xsc">
+      <DependentUpon>database_projet4DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="database_projet4DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>database_projet4DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="database_projet4DataSet2.xss">
+      <DependentUpon>database_projet4DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="database_projet4DataSet3.xsc">
+      <DependentUpon>database_projet4DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="database_projet4DataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>database_projet4DataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="database_projet4DataSet3.xss">
+      <DependentUpon>database_projet4DataSet3.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

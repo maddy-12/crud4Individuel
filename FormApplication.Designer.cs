@@ -29,6 +29,7 @@ namespace CrudBloc4
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sitesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gérerLesSiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,7 +37,36 @@ namespace CrudBloc4
             this.gérerLesServicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salariésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDesSalariésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_searchHome = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.database_projet4DataSet = new CrudBloc4.database_projet4DataSet();
+            this.siteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.siteTableAdapter = new CrudBloc4.database_projet4DataSetTableAdapters.SiteTableAdapter();
+            this.siteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.database_projet4DataSet1 = new CrudBloc4.database_projet4DataSet1();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.departmentTableAdapter = new CrudBloc4.database_projet4DataSet1TableAdapters.DepartmentTableAdapter();
+            this.database_projet4DataSet2 = new CrudBloc4.database_projet4DataSet2();
+            this.database_projet4DataSet3 = new CrudBloc4.database_projet4DataSet3();
+            this.databaseprojet4DataSet3BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.database_projet4DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siteBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database_projet4DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database_projet4DataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database_projet4DataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseprojet4DataSet3BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -78,7 +108,7 @@ namespace CrudBloc4
             // gérerLesServicesToolStripMenuItem
             // 
             this.gérerLesServicesToolStripMenuItem.Name = "gérerLesServicesToolStripMenuItem";
-            this.gérerLesServicesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.gérerLesServicesToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.gérerLesServicesToolStripMenuItem.Text = "Gérer les services";
             this.gérerLesServicesToolStripMenuItem.Click += new System.EventHandler(this.gérerLesServicesToolStripMenuItem_Click);
             // 
@@ -93,21 +123,187 @@ namespace CrudBloc4
             // gestionDesSalariésToolStripMenuItem
             // 
             this.gestionDesSalariésToolStripMenuItem.Name = "gestionDesSalariésToolStripMenuItem";
-            this.gestionDesSalariésToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.gestionDesSalariésToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
             this.gestionDesSalariésToolStripMenuItem.Text = "Gestion des salariés";
             this.gestionDesSalariésToolStripMenuItem.Click += new System.EventHandler(this.gestionDesSalariésToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(309, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 32);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Annuaire";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(204, 124);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(327, 22);
+            this.textBox1.TabIndex = 2;
+            // 
+            // btn_searchHome
+            // 
+            this.btn_searchHome.BackColor = System.Drawing.Color.MediumPurple;
+            this.btn_searchHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_searchHome.ForeColor = System.Drawing.Color.White;
+            this.btn_searchHome.Location = new System.Drawing.Point(555, 116);
+            this.btn_searchHome.Name = "btn_searchHome";
+            this.btn_searchHome.Size = new System.Drawing.Size(128, 35);
+            this.btn_searchHome.TabIndex = 3;
+            this.btn_searchHome.Text = "Rechercher";
+            this.btn_searchHome.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(142, 130);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(83, 124);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 18);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Rechercher";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(51, 169);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 17);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Sites ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(453, 169);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 17);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Service";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.siteBindingSource1, "Id", true));
+            this.comboBox1.DataSource = this.siteBindingSource;
+            this.comboBox1.DisplayMember = "city_name";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(100, 166);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(218, 24);
+            this.comboBox1.TabIndex = 9;
+            this.comboBox1.ValueMember = "Id";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DataSource = this.departmentBindingSource;
+            this.comboBox2.DisplayMember = "department";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(528, 169);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(218, 24);
+            this.comboBox2.TabIndex = 10;
+            this.comboBox2.ValueMember = "Id";
+            // 
+            // database_projet4DataSet
+            // 
+            this.database_projet4DataSet.DataSetName = "database_projet4DataSet";
+            this.database_projet4DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // siteBindingSource
+            // 
+            this.siteBindingSource.DataMember = "Site";
+            this.siteBindingSource.DataSource = this.database_projet4DataSet;
+            // 
+            // siteTableAdapter
+            // 
+            this.siteTableAdapter.ClearBeforeFill = true;
+            // 
+            // siteBindingSource1
+            // 
+            this.siteBindingSource1.DataMember = "Site";
+            this.siteBindingSource1.DataSource = this.database_projet4DataSet;
+            // 
+            // database_projet4DataSet1
+            // 
+            this.database_projet4DataSet1.DataSetName = "database_projet4DataSet1";
+            this.database_projet4DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataMember = "Department";
+            this.departmentBindingSource.DataSource = this.database_projet4DataSet1;
+            // 
+            // departmentTableAdapter
+            // 
+            this.departmentTableAdapter.ClearBeforeFill = true;
+            // 
+            // database_projet4DataSet2
+            // 
+            this.database_projet4DataSet2.DataSetName = "database_projet4DataSet2";
+            this.database_projet4DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // database_projet4DataSet3
+            // 
+            this.database_projet4DataSet3.DataSetName = "database_projet4DataSet3";
+            this.database_projet4DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // databaseprojet4DataSet3BindingSource
+            // 
+            this.databaseprojet4DataSet3BindingSource.DataSource = this.database_projet4DataSet3;
+            this.databaseprojet4DataSet3BindingSource.Position = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(54, 223);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(691, 187);
+            this.dataGridView1.TabIndex = 11;
             // 
             // FormApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btn_searchHome);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormApplication";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FormApplication_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.database_projet4DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siteBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database_projet4DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database_projet4DataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database_projet4DataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseprojet4DataSet3BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,6 +318,26 @@ namespace CrudBloc4
         private System.Windows.Forms.ToolStripMenuItem gérerLesServicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salariésToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDesSalariésToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btn_searchHome;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private database_projet4DataSet database_projet4DataSet;
+        private System.Windows.Forms.BindingSource siteBindingSource;
+        private database_projet4DataSetTableAdapters.SiteTableAdapter siteTableAdapter;
+        private System.Windows.Forms.BindingSource siteBindingSource1;
+        private database_projet4DataSet1 database_projet4DataSet1;
+        private System.Windows.Forms.BindingSource departmentBindingSource;
+        private database_projet4DataSet1TableAdapters.DepartmentTableAdapter departmentTableAdapter;
+        private database_projet4DataSet2 database_projet4DataSet2;
+        private database_projet4DataSet3 database_projet4DataSet3;
+        private System.Windows.Forms.BindingSource databaseprojet4DataSet3BindingSource;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

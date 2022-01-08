@@ -37,5 +37,14 @@ namespace CrudBloc4
             EmployeeForm form = new EmployeeForm();
             form.Show();
         }
+
+        private void FormApplication_Load(object sender, EventArgs e)
+        {
+            // TODO: cette ligne de code charge les données dans la table 'database_projet4DataSet1.Department'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.departmentTableAdapter.Fill(this.database_projet4DataSet1.Department);
+            // TODO: cette ligne de code charge les données dans la table 'database_projet4DataSet.Site'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.siteTableAdapter.Fill(this.database_projet4DataSet.Site);
+
+        }
     }
 }
