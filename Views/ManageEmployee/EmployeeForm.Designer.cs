@@ -29,6 +29,7 @@ namespace CrudBloc4.Views.ManageEmployee
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_empFName = new System.Windows.Forms.Label();
             this.lbl_EmpName = new System.Windows.Forms.Label();
@@ -44,14 +45,26 @@ namespace CrudBloc4.Views.ManageEmployee
             this.txt_mobileEmpl = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.txt_emailEmp = new System.Windows.Forms.TextBox();
-            this.listBox_site = new System.Windows.Forms.ListBox();
-            this.listBox_Service = new System.Windows.Forms.ListBox();
             this.btnAddEmp = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgvEmpl = new System.Windows.Forms.DataGridView();
             this.btnCancelEmp = new System.Windows.Forms.Button();
             this.btnDeleteEmp = new System.Windows.Forms.Button();
             this.btnSearchEmp = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.comboBox_site = new System.Windows.Forms.ComboBox();
+            this.siteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database_projet4DataSet = new CrudBloc4.database_projet4DataSet();
+            this.comboBox_dept = new System.Windows.Forms.ComboBox();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database_projet4DataSet1 = new CrudBloc4.database_projet4DataSet1();
+            this.databaseprojet4DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.departmentTableAdapter = new CrudBloc4.database_projet4DataSet1TableAdapters.DepartmentTableAdapter();
+            this.siteTableAdapter = new CrudBloc4.database_projet4DataSetTableAdapters.SiteTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvEmpl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database_projet4DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database_projet4DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseprojet4DataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -98,7 +111,7 @@ namespace CrudBloc4.Views.ManageEmployee
             // 
             this.lbl_email.AutoSize = true;
             this.lbl_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_email.Location = new System.Drawing.Point(414, 75);
+            this.lbl_email.Location = new System.Drawing.Point(437, 75);
             this.lbl_email.Name = "lbl_email";
             this.lbl_email.Size = new System.Drawing.Size(50, 18);
             this.lbl_email.TabIndex = 21;
@@ -118,7 +131,7 @@ namespace CrudBloc4.Views.ManageEmployee
             // 
             this.lbl_dept.AutoSize = true;
             this.lbl_dept.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_dept.Location = new System.Drawing.Point(414, 172);
+            this.lbl_dept.Location = new System.Drawing.Point(425, 172);
             this.lbl_dept.Name = "lbl_dept";
             this.lbl_dept.Size = new System.Drawing.Size(64, 18);
             this.lbl_dept.TabIndex = 23;
@@ -128,7 +141,7 @@ namespace CrudBloc4.Views.ManageEmployee
             // 
             this.lbl_site.AutoSize = true;
             this.lbl_site.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_site.Location = new System.Drawing.Point(414, 127);
+            this.lbl_site.Location = new System.Drawing.Point(448, 127);
             this.lbl_site.Name = "lbl_site";
             this.lbl_site.Size = new System.Drawing.Size(37, 18);
             this.lbl_site.TabIndex = 24;
@@ -148,68 +161,50 @@ namespace CrudBloc4.Views.ManageEmployee
             // 
             this.txt_nameEmp.Location = new System.Drawing.Point(182, 76);
             this.txt_nameEmp.Name = "txt_nameEmp";
-            this.txt_nameEmp.Size = new System.Drawing.Size(133, 22);
+            this.txt_nameEmp.Size = new System.Drawing.Size(164, 22);
             this.txt_nameEmp.TabIndex = 26;
             // 
             // txt_FNameEmp
             // 
             this.txt_FNameEmp.Location = new System.Drawing.Point(182, 127);
             this.txt_FNameEmp.Name = "txt_FNameEmp";
-            this.txt_FNameEmp.Size = new System.Drawing.Size(133, 22);
+            this.txt_FNameEmp.Size = new System.Drawing.Size(164, 22);
             this.txt_FNameEmp.TabIndex = 27;
             // 
             // txt_phoneEmp
             // 
             this.txt_phoneEmp.Location = new System.Drawing.Point(182, 172);
             this.txt_phoneEmp.Name = "txt_phoneEmp";
-            this.txt_phoneEmp.Size = new System.Drawing.Size(133, 22);
+            this.txt_phoneEmp.Size = new System.Drawing.Size(164, 22);
             this.txt_phoneEmp.TabIndex = 28;
             // 
             // txt_mobileEmpl
             // 
             this.txt_mobileEmpl.Location = new System.Drawing.Point(182, 220);
             this.txt_mobileEmpl.Name = "txt_mobileEmpl";
-            this.txt_mobileEmpl.Size = new System.Drawing.Size(133, 22);
+            this.txt_mobileEmpl.Size = new System.Drawing.Size(164, 22);
             this.txt_mobileEmpl.TabIndex = 29;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(152, 273);
+            this.textBox5.Location = new System.Drawing.Point(182, 273);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(313, 22);
+            this.textBox5.Size = new System.Drawing.Size(455, 22);
             this.textBox5.TabIndex = 30;
             // 
             // txt_emailEmp
             // 
-            this.txt_emailEmp.Location = new System.Drawing.Point(482, 74);
+            this.txt_emailEmp.Location = new System.Drawing.Point(517, 74);
             this.txt_emailEmp.Name = "txt_emailEmp";
-            this.txt_emailEmp.Size = new System.Drawing.Size(133, 22);
+            this.txt_emailEmp.Size = new System.Drawing.Size(275, 22);
             this.txt_emailEmp.TabIndex = 31;
-            // 
-            // listBox_site
-            // 
-            this.listBox_site.FormattingEnabled = true;
-            this.listBox_site.ItemHeight = 16;
-            this.listBox_site.Location = new System.Drawing.Point(482, 127);
-            this.listBox_site.Name = "listBox_site";
-            this.listBox_site.Size = new System.Drawing.Size(133, 20);
-            this.listBox_site.TabIndex = 32;
-            // 
-            // listBox_Service
-            // 
-            this.listBox_Service.FormattingEnabled = true;
-            this.listBox_Service.ItemHeight = 16;
-            this.listBox_Service.Location = new System.Drawing.Point(482, 174);
-            this.listBox_Service.Name = "listBox_Service";
-            this.listBox_Service.Size = new System.Drawing.Size(133, 20);
-            this.listBox_Service.TabIndex = 33;
             // 
             // btnAddEmp
             // 
             this.btnAddEmp.BackColor = System.Drawing.Color.MediumPurple;
             this.btnAddEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddEmp.ForeColor = System.Drawing.Color.White;
-            this.btnAddEmp.Location = new System.Drawing.Point(482, 215);
+            this.btnAddEmp.Location = new System.Drawing.Point(658, 215);
             this.btnAddEmp.Name = "btnAddEmp";
             this.btnAddEmp.Size = new System.Drawing.Size(133, 35);
             this.btnAddEmp.TabIndex = 34;
@@ -217,15 +212,15 @@ namespace CrudBloc4.Views.ManageEmployee
             this.btnAddEmp.UseVisualStyleBackColor = false;
             this.btnAddEmp.Click += new System.EventHandler(this.btnAddEmp_Click);
             // 
-            // dataGridView1
+            // dtgvEmpl
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(61, 308);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(553, 125);
-            this.dataGridView1.TabIndex = 38;
+            this.dtgvEmpl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvEmpl.Location = new System.Drawing.Point(61, 308);
+            this.dtgvEmpl.Name = "dtgvEmpl";
+            this.dtgvEmpl.RowHeadersWidth = 51;
+            this.dtgvEmpl.RowTemplate.Height = 24;
+            this.dtgvEmpl.Size = new System.Drawing.Size(731, 125);
+            this.dtgvEmpl.TabIndex = 38;
             // 
             // btnCancelEmp
             // 
@@ -256,25 +251,82 @@ namespace CrudBloc4.Views.ManageEmployee
             this.btnSearchEmp.BackColor = System.Drawing.Color.MediumPurple;
             this.btnSearchEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchEmp.ForeColor = System.Drawing.Color.White;
-            this.btnSearchEmp.Location = new System.Drawing.Point(482, 264);
+            this.btnSearchEmp.Location = new System.Drawing.Point(659, 264);
             this.btnSearchEmp.Name = "btnSearchEmp";
             this.btnSearchEmp.Size = new System.Drawing.Size(133, 38);
             this.btnSearchEmp.TabIndex = 35;
             this.btnSearchEmp.Text = "Rechercher";
             this.btnSearchEmp.UseVisualStyleBackColor = false;
             // 
+            // comboBox_site
+            // 
+            this.comboBox_site.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.siteBindingSource, "Id", true));
+            this.comboBox_site.DataSource = this.siteBindingSource;
+            this.comboBox_site.DisplayMember = "city_name";
+            this.comboBox_site.FormattingEnabled = true;
+            this.comboBox_site.Location = new System.Drawing.Point(517, 127);
+            this.comboBox_site.Name = "comboBox_site";
+            this.comboBox_site.Size = new System.Drawing.Size(275, 24);
+            this.comboBox_site.TabIndex = 39;
+            this.comboBox_site.ValueMember = "Id";
+            // 
+            // siteBindingSource
+            // 
+            this.siteBindingSource.DataMember = "Site";
+            this.siteBindingSource.DataSource = this.database_projet4DataSet;
+            // 
+            // database_projet4DataSet
+            // 
+            this.database_projet4DataSet.DataSetName = "database_projet4DataSet";
+            this.database_projet4DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // comboBox_dept
+            // 
+            this.comboBox_dept.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.departmentBindingSource, "Id", true));
+            this.comboBox_dept.DataSource = this.departmentBindingSource;
+            this.comboBox_dept.DisplayMember = "department";
+            this.comboBox_dept.FormattingEnabled = true;
+            this.comboBox_dept.Location = new System.Drawing.Point(517, 172);
+            this.comboBox_dept.Name = "comboBox_dept";
+            this.comboBox_dept.Size = new System.Drawing.Size(274, 24);
+            this.comboBox_dept.TabIndex = 40;
+            this.comboBox_dept.ValueMember = "Id";
+            // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataMember = "Department";
+            this.departmentBindingSource.DataSource = this.database_projet4DataSet1;
+            // 
+            // database_projet4DataSet1
+            // 
+            this.database_projet4DataSet1.DataSetName = "database_projet4DataSet1";
+            this.database_projet4DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // databaseprojet4DataSetBindingSource
+            // 
+            this.databaseprojet4DataSetBindingSource.DataSource = this.database_projet4DataSet;
+            this.databaseprojet4DataSetBindingSource.Position = 0;
+            // 
+            // departmentTableAdapter
+            // 
+            this.departmentTableAdapter.ClearBeforeFill = true;
+            // 
+            // siteTableAdapter
+            // 
+            this.siteTableAdapter.ClearBeforeFill = true;
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 505);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(873, 505);
+            this.Controls.Add(this.comboBox_dept);
+            this.Controls.Add(this.comboBox_site);
+            this.Controls.Add(this.dtgvEmpl);
             this.Controls.Add(this.btnDeleteEmp);
             this.Controls.Add(this.btnCancelEmp);
             this.Controls.Add(this.btnSearchEmp);
             this.Controls.Add(this.btnAddEmp);
-            this.Controls.Add(this.listBox_Service);
-            this.Controls.Add(this.listBox_site);
             this.Controls.Add(this.txt_emailEmp);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.txt_mobileEmpl);
@@ -293,7 +345,12 @@ namespace CrudBloc4.Views.ManageEmployee
             this.Name = "EmployeeForm";
             this.Text = "EmployeeForm";
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvEmpl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database_projet4DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database_projet4DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseprojet4DataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,12 +373,19 @@ namespace CrudBloc4.Views.ManageEmployee
         private System.Windows.Forms.TextBox txt_mobileEmpl;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox txt_emailEmp;
-        private System.Windows.Forms.ListBox listBox_site;
-        private System.Windows.Forms.ListBox listBox_Service;
         private System.Windows.Forms.Button btnAddEmp;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgvEmpl;
         private System.Windows.Forms.Button btnCancelEmp;
         private System.Windows.Forms.Button btnDeleteEmp;
         private System.Windows.Forms.Button btnSearchEmp;
+        private System.Windows.Forms.ComboBox comboBox_site;
+        private System.Windows.Forms.ComboBox comboBox_dept;
+        private System.Windows.Forms.BindingSource databaseprojet4DataSetBindingSource;
+        private database_projet4DataSet database_projet4DataSet;
+        private database_projet4DataSet1 database_projet4DataSet1;
+        private System.Windows.Forms.BindingSource departmentBindingSource;
+        private database_projet4DataSet1TableAdapters.DepartmentTableAdapter departmentTableAdapter;
+        private System.Windows.Forms.BindingSource siteBindingSource;
+        private database_projet4DataSetTableAdapters.SiteTableAdapter siteTableAdapter;
     }
 }

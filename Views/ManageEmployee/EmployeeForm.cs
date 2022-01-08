@@ -26,7 +26,7 @@ namespace CrudBloc4.Views.ManageEmployee
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
-                SqlCommand sqlCmd = new SqlCommand("EmplAdd");
+                SqlCommand sqlCmd = new SqlCommand("EmplAdd", sqlCon);
                 sqlCmd.CommandType = CommandType.StoredProcedure;
                 sqlCmd.Parameters.AddWithValue("@IdEmpl", emplId);
                 sqlCmd.Parameters.AddWithValue("@nameEmpl", txt_nameEmp.Text.Trim());
@@ -34,17 +34,37 @@ namespace CrudBloc4.Views.ManageEmployee
                 sqlCmd.Parameters.AddWithValue("@phoneEmpl", txt_phoneEmp.Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@mobileEmpl", txt_mobileEmpl.Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@emailEmpl", txt_emailEmp.Text.Trim());
-                sqlCmd.Parameters.AddWithValue("@IdDep", listBox_Service);
-                sqlCmd.Parameters.AddWithValue("@IdSite", listBox_site);
+                sqlCmd.Parameters.AddWithValue("@IdDep", comboBox_dept.SelectedValue);
+                sqlCmd.Parameters.AddWithValue("@IdSite", comboBox_site.SelectedValue);
                 sqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Salarié ajouté avec succès");
+                GridFill();
+            }
+        }
 
-
+        //Afficher dans le Grid
+        
+        void GridFill()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("EmplViewAll", sqlCon);
+                sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                DataTable dataTableEmpl = new DataTable();
+                sqlDataAdapter.Fill(dataTableEmpl);
+                dtgvEmpl.DataSource = dataTableEmpl;
+                //dtgvEmpl.Columns[0].Visible = false; //Cacher ID
             }
         }
 
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
+            // TODO: cette ligne de code charge les données dans la table 'database_projet4DataSet.Site'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.siteTableAdapter.Fill(this.database_projet4DataSet.Site);
+            // TODO: cette ligne de code charge les données dans la table 'database_projet4DataSet1.Department'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.departmentTableAdapter.Fill(this.database_projet4DataSet1.Department);
+            GridFill();
 
         }
     }

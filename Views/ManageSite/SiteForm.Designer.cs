@@ -71,7 +71,6 @@ namespace CrudBloc4.Views
             this.txt_cityName.Name = "txt_cityName";
             this.txt_cityName.Size = new System.Drawing.Size(404, 22);
             this.txt_cityName.TabIndex = 2;
-
             // 
             // dtgvSite
             // 
@@ -86,6 +85,7 @@ namespace CrudBloc4.Views
             this.dtgvSite.RowTemplate.Height = 24;
             this.dtgvSite.Size = new System.Drawing.Size(683, 169);
             this.dtgvSite.TabIndex = 3;
+ 
             this.dtgvSite.DoubleClick += new System.EventHandler(this.dtgvSite_DoubleClick);
             // 
             // btnAdd
