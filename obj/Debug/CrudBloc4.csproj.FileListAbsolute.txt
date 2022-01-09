@@ -24,3 +24,4 @@ C:\Users\Benaf\OneDrive\Documents\Cours cesi\CrudBloc4\bin\Debug\MySql.Data.xml
 C:\Users\Benaf\OneDrive\Documents\Cours cesi\CrudBloc4\obj\Debug\CrudBloc4.exe.config
 C:\Users\Benaf\OneDrive\Documents\Cours cesi\CrudBloc4\obj\Debug\CrudBloc4.Views.ManageDepartment.DepartmentForm.resources
 C:\Users\Benaf\OneDrive\Documents\Cours cesi\CrudBloc4\obj\Debug\CrudBloc4.Views.ManageEmployee.EmployeeForm.resources
+C:\Users\Benaf\OneDrive\Documents\Cours cesi\CrudBloc4\obj\Debug\CrudBloc4.Views.PasswordForm.PwdFormAdmin.resources

@@ -71,11 +71,11 @@ namespace CrudBloc4.Views.ManageEmployee
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(283, 25);
+            this.label1.Location = new System.Drawing.Point(361, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 29);
+            this.label1.Size = new System.Drawing.Size(136, 36);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Employés";
+            this.label1.Text = "Salariés";
             // 
             // lbl_empFName
             // 
@@ -214,6 +214,7 @@ namespace CrudBloc4.Views.ManageEmployee
             // 
             // dtgvEmpl
             // 
+            this.dtgvEmpl.BackgroundColor = System.Drawing.Color.Lavender;
             this.dtgvEmpl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvEmpl.Location = new System.Drawing.Point(61, 308);
             this.dtgvEmpl.Name = "dtgvEmpl";
@@ -323,6 +324,7 @@ namespace CrudBloc4.Views.ManageEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(873, 505);
             this.Controls.Add(this.comboBox_dept);
             this.Controls.Add(this.comboBox_site);

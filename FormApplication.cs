@@ -11,15 +11,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using CrudBloc4.Views.PasswordForm;
 
 namespace CrudBloc4
 {
     public partial class FormApplication : Form
     {
         string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Benaf\OneDrive\Documents\Cours cesi\projetBloc4Individuel\database_projet4.mdf;Integrated Security=True;Connect Timeout=30";
+   
         public FormApplication()
         {
             InitializeComponent();
+            KeyPreview = true;
+        }
+        private void FormApplication_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.G)
+            {
+                PwdFormAdmin form = new PwdFormAdmin();
+                this.Hide();
+                form.Show();              
+            }           
         }
 
         private void gérerLesSiteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -27,15 +39,16 @@ namespace CrudBloc4
             SiteForm form = new SiteForm();
             form.Show();
         }
-
         private void gérerLesServicesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             DepartmentForm form = new DepartmentForm();
             form.Show();
         }
 
         private void gestionDesSalariésToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             EmployeeForm form = new EmployeeForm();
             form.Show();
         }
@@ -53,6 +66,7 @@ namespace CrudBloc4
 
         }
 
+        //Rechercher 
         private void btn_searchHome_Click(object sender, EventArgs e)
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
@@ -61,11 +75,38 @@ namespace CrudBloc4
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("EmplSearchByValue", sqlCon);
                 sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                 sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@searchValue", txt_searchHome.Text.Trim());
-                DataTable dataTableEmpl = new DataTable();
+                DataTable dataTableEmpl = new DataTable();//store data
                 sqlDataAdapter.Fill(dataTableEmpl);
                 dtgv_home.DataSource = dataTableEmpl;
                 dtgv_home.Columns[0].Visible = false; //Cacher ID
             }
         }
+
+        private void cb_dept_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        /*    using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("DepViewById", sqlCon);
+                sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure; 
+                DataTable dataTableEmpl = new DataTable();//store data
+                sqlDataAdapter.Fill(dataTableEmpl);
+                dtgv_home.DataSource = dataTableEmpl;
+                dtgv_home.Columns[0].Visible = false; //Cacher ID
+
+                DataView dataV = new DataView(dataTableEmpl);
+                if (cb_dept.SelectedItem.ToString() == "Tout")
+                {
+                    dataV.RowFilter = string.Format("department LIKE '%{0}%'", cb_dept.SelectedItem.ToString());
+                    dtgv_home.DataSource = dataV;
+                }
+                else
+                {
+                    dtgv_home.DataSource = dataTableEmpl;
+                }
+            }*/
+        }
+
+       
     }
 }

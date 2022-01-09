@@ -76,6 +76,7 @@ namespace CrudBloc4.Views
             // 
             this.dtgvSite.AllowUserToAddRows = false;
             this.dtgvSite.AllowUserToDeleteRows = false;
+            this.dtgvSite.BackgroundColor = System.Drawing.Color.Lavender;
             this.dtgvSite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvSite.GridColor = System.Drawing.Color.Thistle;
             this.dtgvSite.Location = new System.Drawing.Point(62, 207);
@@ -85,7 +86,6 @@ namespace CrudBloc4.Views
             this.dtgvSite.RowTemplate.Height = 24;
             this.dtgvSite.Size = new System.Drawing.Size(683, 169);
             this.dtgvSite.TabIndex = 3;
- 
             this.dtgvSite.DoubleClick += new System.EventHandler(this.dtgvSite_DoubleClick);
             // 
             // btnAdd
@@ -174,7 +174,7 @@ namespace CrudBloc4.Views
             this.btnCancel = btnCancel;
             this.btnDelete = button3;
             this.connectionString = connectionString;
-            this.siteId = siteId;
+            this.Id = Id;
         }
 
 

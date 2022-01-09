@@ -15,7 +15,7 @@ namespace CrudBloc4.Views
     {
         //Connexion à la BDD
        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Benaf\OneDrive\Documents\Cours cesi\projetBloc4Individuel\database_projet4.mdf;Integrated Security=True;Connect Timeout=30";
-        private int siteId = 0;
+        private int Id = 0;
         public SiteForm()
         {
             InitializeComponent();
@@ -29,6 +29,7 @@ namespace CrudBloc4.Views
                 sqlCon.Open();
                 SqlCommand sqlCmd = new SqlCommand("SiteAddOrEdit", sqlCon);
                 sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@Id", Id);
                 sqlCmd.Parameters.AddWithValue("@city_name", txt_cityName.Text.Trim());
                 sqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Site ajouté avec succès");
@@ -62,7 +63,7 @@ namespace CrudBloc4.Views
         void Clear()
         {
             txt_cityName.Text = "";
-            siteId = 0;
+            Id = 0;
             btnAdd.Text = "Ajouter";
             btnDelete.Enabled = false;
         }
@@ -73,8 +74,9 @@ namespace CrudBloc4.Views
             if (dtgvSite.CurrentRow.Index != -1)//Verifier si la ligne est dans la grid View
             {
                 txt_cityName.Text = dtgvSite.CurrentRow.Cells[1].Value.ToString();
-                siteId = Convert.ToInt32(dtgvSite.CurrentRow.Cells[0].Value.ToString());
+                Id = Convert.ToInt32(dtgvSite.CurrentRow.Cells[0].Value.ToString());
                 btnDelete.Enabled = true;
+                btnAdd.Text = "Modifier";
             }
         }
 
@@ -92,7 +94,7 @@ namespace CrudBloc4.Views
                 sqlCon.Open();
                 SqlCommand sqlCmd = new SqlCommand("SiteDeleteById", sqlCon);
                 sqlCmd.CommandType = CommandType.StoredProcedure;
-                sqlCmd.Parameters.AddWithValue("@Id", siteId);
+                sqlCmd.Parameters.AddWithValue("@Id", Id);
                 sqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Site supprimé avec succès");
                 Clear();

@@ -48,7 +48,7 @@ namespace CrudBloc4
             this.siteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.database_projet4DataSet = new CrudBloc4.database_projet4DataSet();
             this.siteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cb_dept = new System.Windows.Forms.ComboBox();
             this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database_projet4DataSet1 = new CrudBloc4.database_projet4DataSet1();
             this.siteTableAdapter = new CrudBloc4.database_projet4DataSetTableAdapters.SiteTableAdapter();
@@ -57,10 +57,6 @@ namespace CrudBloc4
             this.database_projet4DataSet3 = new CrudBloc4.database_projet4DataSet3();
             this.databaseprojet4DataSet3BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtgv_home = new System.Windows.Forms.DataGridView();
-            this.emplViewAllBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.emplViewAllTableAdapter = new CrudBloc4.database_projet4DataSet3TableAdapters.EmplViewAllTableAdapter();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.employeeTableAdapter = new CrudBloc4.database_projet4DataSet3TableAdapters.EmployeeTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +65,10 @@ namespace CrudBloc4
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iddepartmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idsiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emplViewAllBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.emplViewAllTableAdapter = new CrudBloc4.database_projet4DataSet3TableAdapters.EmplViewAllTableAdapter();
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employeeTableAdapter = new CrudBloc4.database_projet4DataSet3TableAdapters.EmployeeTableAdapter();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.siteBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database_projet4DataSet)).BeginInit();
@@ -95,6 +95,7 @@ namespace CrudBloc4
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Visible = false;
             // 
             // sitesToolStripMenuItem
             // 
@@ -234,16 +235,17 @@ namespace CrudBloc4
             this.siteBindingSource.DataMember = "Site";
             this.siteBindingSource.DataSource = this.database_projet4DataSet;
             // 
-            // comboBox2
+            // cb_dept
             // 
-            this.comboBox2.DataSource = this.departmentBindingSource;
-            this.comboBox2.DisplayMember = "department";
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(528, 169);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(218, 24);
-            this.comboBox2.TabIndex = 10;
-            this.comboBox2.ValueMember = "Id";
+            this.cb_dept.DataSource = this.departmentBindingSource;
+            this.cb_dept.DisplayMember = "department";
+            this.cb_dept.FormattingEnabled = true;
+            this.cb_dept.Location = new System.Drawing.Point(528, 169);
+            this.cb_dept.Name = "cb_dept";
+            this.cb_dept.Size = new System.Drawing.Size(218, 24);
+            this.cb_dept.TabIndex = 10;
+            this.cb_dept.ValueMember = "Id";
+            this.cb_dept.SelectedIndexChanged += new System.EventHandler(this.cb_dept_SelectedIndexChanged);
             // 
             // departmentBindingSource
             // 
@@ -283,6 +285,7 @@ namespace CrudBloc4
             this.dtgv_home.AllowUserToAddRows = false;
             this.dtgv_home.AllowUserToDeleteRows = false;
             this.dtgv_home.AutoGenerateColumns = false;
+            this.dtgv_home.BackgroundColor = System.Drawing.Color.Lavender;
             this.dtgv_home.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_home.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -294,31 +297,13 @@ namespace CrudBloc4
             this.iddepartmentDataGridViewTextBoxColumn,
             this.idsiteDataGridViewTextBoxColumn});
             this.dtgv_home.DataSource = this.emplViewAllBindingSource;
-            this.dtgv_home.Location = new System.Drawing.Point(54, 223);
+            this.dtgv_home.Location = new System.Drawing.Point(54, 225);
             this.dtgv_home.Name = "dtgv_home";
             this.dtgv_home.ReadOnly = true;
             this.dtgv_home.RowHeadersWidth = 51;
             this.dtgv_home.RowTemplate.Height = 24;
             this.dtgv_home.Size = new System.Drawing.Size(691, 187);
             this.dtgv_home.TabIndex = 11;
-            // 
-            // emplViewAllBindingSource
-            // 
-            this.emplViewAllBindingSource.DataMember = "EmplViewAll";
-            this.emplViewAllBindingSource.DataSource = this.databaseprojet4DataSet3BindingSource;
-            // 
-            // emplViewAllTableAdapter
-            // 
-            this.emplViewAllTableAdapter.ClearBeforeFill = true;
-            // 
-            // employeeBindingSource
-            // 
-            this.employeeBindingSource.DataMember = "Employee";
-            this.employeeBindingSource.DataSource = this.databaseprojet4DataSet3BindingSource;
-            // 
-            // employeeTableAdapter
-            // 
-            this.employeeTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -392,13 +377,32 @@ namespace CrudBloc4
             this.idsiteDataGridViewTextBoxColumn.ReadOnly = true;
             this.idsiteDataGridViewTextBoxColumn.Width = 125;
             // 
+            // emplViewAllBindingSource
+            // 
+            this.emplViewAllBindingSource.DataMember = "EmplViewAll";
+            this.emplViewAllBindingSource.DataSource = this.databaseprojet4DataSet3BindingSource;
+            // 
+            // emplViewAllTableAdapter
+            // 
+            this.emplViewAllTableAdapter.ClearBeforeFill = true;
+            // 
+            // employeeBindingSource
+            // 
+            this.employeeBindingSource.DataMember = "Employee";
+            this.employeeBindingSource.DataSource = this.databaseprojet4DataSet3BindingSource;
+            // 
+            // employeeTableAdapter
+            // 
+            this.employeeTableAdapter.ClearBeforeFill = true;
+            // 
             // FormApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dtgv_home);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cb_dept);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -410,8 +414,9 @@ namespace CrudBloc4
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormApplication";
-            this.Text = "Form1";
+            this.Text = "Annuaire";
             this.Load += new System.EventHandler(this.FormApplication_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormApplication_KeyDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.siteBindingSource1)).EndInit();
@@ -432,7 +437,7 @@ namespace CrudBloc4
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        public System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem sitesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gérerLesSiteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem servicesToolStripMenuItem;
@@ -447,7 +452,7 @@ namespace CrudBloc4
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cb_dept;
         private database_projet4DataSet database_projet4DataSet;
         private System.Windows.Forms.BindingSource siteBindingSource;
         private database_projet4DataSetTableAdapters.SiteTableAdapter siteTableAdapter;
