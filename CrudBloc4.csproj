@@ -71,6 +71,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>database_projet4DataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="database_projet4DataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>database_projet4DataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="database_projet4DataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>database_projet4DataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="database_projet4DataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>database_projet4DataSet6.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormApplication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +185,39 @@
     </None>
     <None Include="database_projet4DataSet3.xss">
       <DependentUpon>database_projet4DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="database_projet4DataSet4.xsc">
+      <DependentUpon>database_projet4DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="database_projet4DataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>database_projet4DataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="database_projet4DataSet4.xss">
+      <DependentUpon>database_projet4DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="database_projet4DataSet5.xsc">
+      <DependentUpon>database_projet4DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="database_projet4DataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>database_projet4DataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="database_projet4DataSet5.xss">
+      <DependentUpon>database_projet4DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="database_projet4DataSet6.xsc">
+      <DependentUpon>database_projet4DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="database_projet4DataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>database_projet4DataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="database_projet4DataSet6.xss">
+      <DependentUpon>database_projet4DataSet6.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -73,7 +73,7 @@ namespace CrudBloc4.Views.ManageEmployee
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(361, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 36);
+            this.label1.Size = new System.Drawing.Size(109, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Salariés";
             // 
@@ -296,6 +296,7 @@ namespace CrudBloc4.Views.ManageEmployee
             this.comboBox_dept.Size = new System.Drawing.Size(274, 24);
             this.comboBox_dept.TabIndex = 40;
             this.comboBox_dept.ValueMember = "Id";
+         
             // 
             // departmentBindingSource
             // 

@@ -57,18 +57,16 @@ namespace CrudBloc4
             this.database_projet4DataSet3 = new CrudBloc4.database_projet4DataSet3();
             this.databaseprojet4DataSet3BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtgv_home = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phonenumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mobilenumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iddepartmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idsiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emplViewAllBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.database_projet4DataSet5 = new CrudBloc4.database_projet4DataSet5();
             this.emplViewAllBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.emplViewAllTableAdapter = new CrudBloc4.database_projet4DataSet3TableAdapters.EmplViewAllTableAdapter();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeeTableAdapter = new CrudBloc4.database_projet4DataSet3TableAdapters.EmployeeTableAdapter();
+            this.database_projet4DataSet4 = new CrudBloc4.database_projet4DataSet4();
+            this.emplViewAllBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.emplViewAllTableAdapter1 = new CrudBloc4.database_projet4DataSet4TableAdapters.EmplViewAllTableAdapter();
+            this.emplViewAllTableAdapter2 = new CrudBloc4.database_projet4DataSet5TableAdapters.EmplViewAllTableAdapter();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.siteBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database_projet4DataSet)).BeginInit();
@@ -79,8 +77,12 @@ namespace CrudBloc4
             ((System.ComponentModel.ISupportInitialize)(this.database_projet4DataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseprojet4DataSet3BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_home)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emplViewAllBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database_projet4DataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emplViewAllBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database_projet4DataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emplViewAllBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -284,98 +286,25 @@ namespace CrudBloc4
             // 
             this.dtgv_home.AllowUserToAddRows = false;
             this.dtgv_home.AllowUserToDeleteRows = false;
-            this.dtgv_home.AutoGenerateColumns = false;
+            this.dtgv_home.AllowUserToOrderColumns = true;
             this.dtgv_home.BackgroundColor = System.Drawing.Color.Lavender;
             this.dtgv_home.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_home.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.firstnameDataGridViewTextBoxColumn,
-            this.phonenumberDataGridViewTextBoxColumn,
-            this.mobilenumberDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.iddepartmentDataGridViewTextBoxColumn,
-            this.idsiteDataGridViewTextBoxColumn});
-            this.dtgv_home.DataSource = this.emplViewAllBindingSource;
             this.dtgv_home.Location = new System.Drawing.Point(54, 225);
             this.dtgv_home.Name = "dtgv_home";
-            this.dtgv_home.ReadOnly = true;
             this.dtgv_home.RowHeadersWidth = 51;
             this.dtgv_home.RowTemplate.Height = 24;
             this.dtgv_home.Size = new System.Drawing.Size(691, 187);
             this.dtgv_home.TabIndex = 11;
             // 
-            // idDataGridViewTextBoxColumn
+            // emplViewAllBindingSource2
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 125;
+            this.emplViewAllBindingSource2.DataMember = "EmplViewAll";
+            this.emplViewAllBindingSource2.DataSource = this.database_projet4DataSet5;
             // 
-            // nameDataGridViewTextBoxColumn
+            // database_projet4DataSet5
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // firstnameDataGridViewTextBoxColumn
-            // 
-            this.firstnameDataGridViewTextBoxColumn.DataPropertyName = "first_name";
-            this.firstnameDataGridViewTextBoxColumn.HeaderText = "first_name";
-            this.firstnameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.firstnameDataGridViewTextBoxColumn.Name = "firstnameDataGridViewTextBoxColumn";
-            this.firstnameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.firstnameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // phonenumberDataGridViewTextBoxColumn
-            // 
-            this.phonenumberDataGridViewTextBoxColumn.DataPropertyName = "phone_number";
-            this.phonenumberDataGridViewTextBoxColumn.HeaderText = "phone_number";
-            this.phonenumberDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.phonenumberDataGridViewTextBoxColumn.Name = "phonenumberDataGridViewTextBoxColumn";
-            this.phonenumberDataGridViewTextBoxColumn.ReadOnly = true;
-            this.phonenumberDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // mobilenumberDataGridViewTextBoxColumn
-            // 
-            this.mobilenumberDataGridViewTextBoxColumn.DataPropertyName = "mobile_number";
-            this.mobilenumberDataGridViewTextBoxColumn.HeaderText = "mobile_number";
-            this.mobilenumberDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.mobilenumberDataGridViewTextBoxColumn.Name = "mobilenumberDataGridViewTextBoxColumn";
-            this.mobilenumberDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mobilenumberDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // iddepartmentDataGridViewTextBoxColumn
-            // 
-            this.iddepartmentDataGridViewTextBoxColumn.DataPropertyName = "id_department";
-            this.iddepartmentDataGridViewTextBoxColumn.HeaderText = "id_department";
-            this.iddepartmentDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iddepartmentDataGridViewTextBoxColumn.Name = "iddepartmentDataGridViewTextBoxColumn";
-            this.iddepartmentDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iddepartmentDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // idsiteDataGridViewTextBoxColumn
-            // 
-            this.idsiteDataGridViewTextBoxColumn.DataPropertyName = "id_site";
-            this.idsiteDataGridViewTextBoxColumn.HeaderText = "id_site";
-            this.idsiteDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idsiteDataGridViewTextBoxColumn.Name = "idsiteDataGridViewTextBoxColumn";
-            this.idsiteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idsiteDataGridViewTextBoxColumn.Width = 125;
+            this.database_projet4DataSet5.DataSetName = "database_projet4DataSet5";
+            this.database_projet4DataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // emplViewAllBindingSource
             // 
@@ -394,6 +323,24 @@ namespace CrudBloc4
             // employeeTableAdapter
             // 
             this.employeeTableAdapter.ClearBeforeFill = true;
+            // 
+            // database_projet4DataSet4
+            // 
+            this.database_projet4DataSet4.DataSetName = "database_projet4DataSet4";
+            this.database_projet4DataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // emplViewAllBindingSource1
+            // 
+            this.emplViewAllBindingSource1.DataMember = "EmplViewAll";
+            this.emplViewAllBindingSource1.DataSource = this.database_projet4DataSet4;
+            // 
+            // emplViewAllTableAdapter1
+            // 
+            this.emplViewAllTableAdapter1.ClearBeforeFill = true;
+            // 
+            // emplViewAllTableAdapter2
+            // 
+            this.emplViewAllTableAdapter2.ClearBeforeFill = true;
             // 
             // FormApplication
             // 
@@ -428,8 +375,12 @@ namespace CrudBloc4
             ((System.ComponentModel.ISupportInitialize)(this.database_projet4DataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseprojet4DataSet3BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_home)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emplViewAllBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database_projet4DataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emplViewAllBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database_projet4DataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emplViewAllBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,14 +419,12 @@ namespace CrudBloc4
         private database_projet4DataSet3TableAdapters.EmplViewAllTableAdapter emplViewAllTableAdapter;
         private System.Windows.Forms.BindingSource employeeBindingSource;
         private database_projet4DataSet3TableAdapters.EmployeeTableAdapter employeeTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phonenumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mobilenumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iddepartmentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idsiteDataGridViewTextBoxColumn;
+        private database_projet4DataSet4 database_projet4DataSet4;
+        private System.Windows.Forms.BindingSource emplViewAllBindingSource1;
+        private database_projet4DataSet4TableAdapters.EmplViewAllTableAdapter emplViewAllTableAdapter1;
+        private database_projet4DataSet5 database_projet4DataSet5;
+        private System.Windows.Forms.BindingSource emplViewAllBindingSource2;
+        private database_projet4DataSet5TableAdapters.EmplViewAllTableAdapter emplViewAllTableAdapter2;
     }
 }
 

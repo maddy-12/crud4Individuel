@@ -23,7 +23,7 @@ namespace CrudBloc4.Views
         //Ajouter
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            // using ferme la connexion quand il en a plus besoin
+            // using ferme la connexion vu qu'on fait la connexion dedans
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
@@ -97,21 +97,6 @@ namespace CrudBloc4.Views
                 sqlCmd.Parameters.AddWithValue("@Id", Id);
                 sqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Site supprimé avec succès");
-                Clear();
-                GridFill();
-            }
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            using (SqlConnection sqlCon = new SqlConnection(connectionString))
-            {
-                sqlCon.Open();
-                SqlCommand sqlCmd = new SqlCommand("SiteUpdate", sqlCon);
-                sqlCmd.CommandType = CommandType.StoredProcedure;
-                sqlCmd.Parameters.AddWithValue("@city_name", txt_cityName.Text.Trim());
-                sqlCmd.ExecuteNonQuery();
-                MessageBox.Show("Site modifi avec succès");
                 Clear();
                 GridFill();
             }

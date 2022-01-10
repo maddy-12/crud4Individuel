@@ -55,6 +55,10 @@ namespace CrudBloc4
 
         private void FormApplication_Load(object sender, EventArgs e)
         {
+            // TODO: cette ligne de code charge les données dans la table 'database_projet4DataSet5.EmplViewAll'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.emplViewAllTableAdapter2.Fill(this.database_projet4DataSet5.EmplViewAll);
+            // TODO: cette ligne de code charge les données dans la table 'database_projet4DataSet4.EmplViewAll'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.emplViewAllTableAdapter1.Fill(this.database_projet4DataSet4.EmplViewAll);
             // TODO: cette ligne de code charge les données dans la table 'database_projet4DataSet3.Employee'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.employeeTableAdapter.Fill(this.database_projet4DataSet3.Employee);
             // TODO: cette ligne de code charge les données dans la table 'database_projet4DataSet3.EmplViewAll'. Vous pouvez la déplacer ou la supprimer selon les besoins.
@@ -63,6 +67,7 @@ namespace CrudBloc4
             this.departmentTableAdapter.Fill(this.database_projet4DataSet1.Department);
             // TODO: cette ligne de code charge les données dans la table 'database_projet4DataSet.Site'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.siteTableAdapter.Fill(this.database_projet4DataSet.Site);
+            GridFill();
 
         }
 
@@ -81,32 +86,36 @@ namespace CrudBloc4
                 dtgv_home.Columns[0].Visible = false; //Cacher ID
             }
         }
-
-        private void cb_dept_SelectedIndexChanged(object sender, EventArgs e)
+        void GridFill()
         {
-        /*    using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("DepViewById", sqlCon);
-                sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure; 
-                DataTable dataTableEmpl = new DataTable();//store data
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("EmplViewAll", sqlCon);
+                sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                DataTable dataTableEmpl = new DataTable();
                 sqlDataAdapter.Fill(dataTableEmpl);
                 dtgv_home.DataSource = dataTableEmpl;
-                dtgv_home.Columns[0].Visible = false; //Cacher ID
-
-                DataView dataV = new DataView(dataTableEmpl);
-                if (cb_dept.SelectedItem.ToString() == "Tout")
-                {
-                    dataV.RowFilter = string.Format("department LIKE '%{0}%'", cb_dept.SelectedItem.ToString());
-                    dtgv_home.DataSource = dataV;
-                }
-                else
-                {
-                    dtgv_home.DataSource = dataTableEmpl;
-                }
-            }*/
+                dtgv_home.Columns[0].Visible = false; //Cacher la colonne ID
+                dtgv_home.Columns[7].Visible = false; //Cacher colonne ID
+                dtgv_home.Columns[6].Visible = false; //Cacher colonne ID
+            }
         }
-
-       
+        private void cb_dept_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("DepFiltre", sqlCon);
+                sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;                
+                DataTable dataTableDpt = new DataTable();//store data
+                sqlDataAdapter.Fill(dataTableDpt);
+                cb_dept.DataSource = dataTableDpt;
+                cb_dept.DisplayMember = "department";
+                cb_dept.ValueMember = "department";
+                cb_dept.Text = "Selectionner";
+            }
+        }
+      
     }
 }

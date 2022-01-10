@@ -137,5 +137,6 @@ namespace CrudBloc4.Views.ManageEmployee
                 dtgvEmpl.Columns[0].Visible = false; //Cacher ID
             }
         }
+
     }
 }
