@@ -140,7 +140,7 @@ namespace CrudBloc4.Views
             this.Controls.Add(this.lbl_city);
             this.Controls.Add(this.label1);
             this.Name = "SiteForm";
-            this.Text = "SiteForm";
+            this.Text = "Gestion des sites";
             this.Load += new System.EventHandler(this.SiteForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSite)).EndInit();
             this.ResumeLayout(false);

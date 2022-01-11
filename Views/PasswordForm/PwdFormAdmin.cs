@@ -19,6 +19,7 @@ namespace CrudBloc4.Views.PasswordForm
 
         public bool btn_password_clicked { get; private set; }
 
+        //On affiche menu si le mdp est correcte
         private void btn_password_Click(object sender, EventArgs e)
         {
             if (txt_password.Text == "adminPassword")
@@ -29,10 +30,10 @@ namespace CrudBloc4.Views.PasswordForm
                form.Show();
             } else if (txt_password.Text == "")
             {
-                MessageBox.Show("vide");
+                MessageBox.Show("Veuillez entre votre mot de passe");
             } else
             {
-                MessageBox.Show("Faux");
+                MessageBox.Show("Mot de passe incorrecte");
             }
         }
 

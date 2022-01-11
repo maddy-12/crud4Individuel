@@ -20,14 +20,20 @@ namespace CrudBloc4.Views.ManageEmployee
             InitializeComponent();
         }
 
-        //Ajouter un employé
+        //Ajouter un salarié
         private void btnAddEmp_Click(object sender, EventArgs e)
         {
+            //Se connecter à la base de donnée
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
+                //Ouvrir la connection
                 sqlCon.Open();
+
+                //Récupérer la commande dans la procédure stockée
                 SqlCommand sqlCmd = new SqlCommand("EmplAdd", sqlCon);
                 sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                //Assigner les paramettre à chaque champs
                 sqlCmd.Parameters.AddWithValue("@IdEmpl", emplId);
                 sqlCmd.Parameters.AddWithValue("@nameEmpl", txt_nameEmp.Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@firstNameEmpl", txt_FNameEmp.Text.Trim());
@@ -36,9 +42,14 @@ namespace CrudBloc4.Views.ManageEmployee
                 sqlCmd.Parameters.AddWithValue("@emailEmpl", txt_emailEmp.Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@IdDep", comboBox_dept.SelectedValue);
                 sqlCmd.Parameters.AddWithValue("@IdSite", comboBox_site.SelectedValue);
+
+                //Exécution de commande
                 sqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Salarié ajouté avec succès");
-                GridFill();
+
+                //Mettre les données saisi dans la dataGrid
+                GridFill(); 
+                //Vidés les champs 
                 Clear();
             }
         }
@@ -69,6 +80,8 @@ namespace CrudBloc4.Views.ManageEmployee
                 sqlDataAdapter.Fill(dataTableEmpl);
                 dtgvEmpl.DataSource = dataTableEmpl;
                 dtgvEmpl.Columns[0].Visible = false; //Cacher ID
+                dtgvEmpl.Columns[7].Visible = false; //Cacher colonne ID
+                dtgvEmpl.Columns[6].Visible = false; //Cacher colonne ID
             }
         }
 
@@ -83,10 +96,9 @@ namespace CrudBloc4.Views.ManageEmployee
             Clear();
         }
 
+        //Modifier
         private void dtgvEmpl_DoubleClick(object sender, EventArgs e)
         {
-            //sqlCmd.Parameters.AddWithValue("@IdDep", comboBox_dept.SelectedValue);
-            //sqlCmd.Parameters.AddWithValue("@IdSite", comboBox_site.SelectedValue);
             if (dtgvEmpl.CurrentRow.Index != -1)
             {
                 txt_nameEmp.Text = dtgvEmpl.CurrentRow.Cells[1].Value.ToString();

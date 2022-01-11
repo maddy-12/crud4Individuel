@@ -220,7 +220,7 @@ namespace CrudBloc4.Views.ManageEmployee
             this.dtgvEmpl.Name = "dtgvEmpl";
             this.dtgvEmpl.RowHeadersWidth = 51;
             this.dtgvEmpl.RowTemplate.Height = 24;
-            this.dtgvEmpl.Size = new System.Drawing.Size(731, 125);
+            this.dtgvEmpl.Size = new System.Drawing.Size(731, 212);
             this.dtgvEmpl.TabIndex = 38;
             this.dtgvEmpl.DoubleClick += new System.EventHandler(this.dtgvEmpl_DoubleClick);
             // 
@@ -229,7 +229,7 @@ namespace CrudBloc4.Views.ManageEmployee
             this.btnCancelEmp.BackColor = System.Drawing.Color.MediumPurple;
             this.btnCancelEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelEmp.ForeColor = System.Drawing.Color.White;
-            this.btnCancelEmp.Location = new System.Drawing.Point(282, 455);
+            this.btnCancelEmp.Location = new System.Drawing.Point(282, 526);
             this.btnCancelEmp.Name = "btnCancelEmp";
             this.btnCancelEmp.Size = new System.Drawing.Size(133, 34);
             this.btnCancelEmp.TabIndex = 36;
@@ -242,7 +242,7 @@ namespace CrudBloc4.Views.ManageEmployee
             this.btnDeleteEmp.BackColor = System.Drawing.Color.DarkRed;
             this.btnDeleteEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteEmp.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteEmp.Location = new System.Drawing.Point(436, 455);
+            this.btnDeleteEmp.Location = new System.Drawing.Point(436, 527);
             this.btnDeleteEmp.Name = "btnDeleteEmp";
             this.btnDeleteEmp.Size = new System.Drawing.Size(133, 35);
             this.btnDeleteEmp.TabIndex = 37;
@@ -296,7 +296,6 @@ namespace CrudBloc4.Views.ManageEmployee
             this.comboBox_dept.Size = new System.Drawing.Size(274, 24);
             this.comboBox_dept.TabIndex = 40;
             this.comboBox_dept.ValueMember = "Id";
-         
             // 
             // departmentBindingSource
             // 
@@ -326,7 +325,7 @@ namespace CrudBloc4.Views.ManageEmployee
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(873, 505);
+            this.ClientSize = new System.Drawing.Size(873, 598);
             this.Controls.Add(this.comboBox_dept);
             this.Controls.Add(this.comboBox_site);
             this.Controls.Add(this.dtgvEmpl);
@@ -350,7 +349,7 @@ namespace CrudBloc4.Views.ManageEmployee
             this.Controls.Add(this.lbl_empFName);
             this.Controls.Add(this.label1);
             this.Name = "EmployeeForm";
-            this.Text = "EmployeeForm";
+            this.Text = "Gestion des salariés";
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvEmpl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.siteBindingSource)).EndInit();

@@ -24,6 +24,8 @@ namespace CrudBloc4
             InitializeComponent();
             KeyPreview = true;
         }
+
+        //Event: Combinaison de touches clavier
         private void FormApplication_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control && e.KeyCode == Keys.G)
@@ -34,11 +36,14 @@ namespace CrudBloc4
             }           
         }
 
+        //Onglet Sites
         private void gérerLesSiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SiteForm form = new SiteForm();
             form.Show();
         }
+
+        //Onglet Service
         private void gérerLesServicesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -46,6 +51,7 @@ namespace CrudBloc4
             form.Show();
         }
 
+        //Onglet Salariés
         private void gestionDesSalariésToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -53,6 +59,7 @@ namespace CrudBloc4
             form.Show();
         }
 
+        // Chargement de l'application
         private void FormApplication_Load(object sender, EventArgs e)
         {
             // TODO: cette ligne de code charge les données dans la table 'database_projet4DataSet5.EmplViewAll'. Vous pouvez la déplacer ou la supprimer selon les besoins.
@@ -80,12 +87,14 @@ namespace CrudBloc4
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("EmplSearchByValue", sqlCon);
                 sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                 sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@searchValue", txt_searchHome.Text.Trim());
-                DataTable dataTableEmpl = new DataTable();//store data
+                DataTable dataTableEmpl = new DataTable();//stocker les données
                 sqlDataAdapter.Fill(dataTableEmpl);
                 dtgv_home.DataSource = dataTableEmpl;
                 dtgv_home.Columns[0].Visible = false; //Cacher ID
             }
         }
+
+        //Récupérer tout les salariés
         void GridFill()
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
@@ -101,21 +110,34 @@ namespace CrudBloc4
                 dtgv_home.Columns[6].Visible = false; //Cacher colonne ID
             }
         }
+
+        //Filtre par Service
         private void cb_dept_SelectedIndexChanged(object sender, EventArgs e)
         {
            using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("DepFiltre", sqlCon);
-                sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;                
+                sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@IdDep", (int)cb_dept.SelectedValue);
                 DataTable dataTableDpt = new DataTable();//store data
                 sqlDataAdapter.Fill(dataTableDpt);
-                cb_dept.DataSource = dataTableDpt;
-                cb_dept.DisplayMember = "department";
-                cb_dept.ValueMember = "department";
-                cb_dept.Text = "Selectionner";
+                dtgv_home.DataSource = dataTableDpt;            
             }
         }
-      
+        //Filtre par Site
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SiteFiltre", sqlCon);
+                sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@IdSite", (int)comboBox1.SelectedValue);
+                DataTable dataTableDpt = new DataTable();//store data
+                sqlDataAdapter.Fill(dataTableDpt);
+                dtgv_home.DataSource = dataTableDpt;
+            }
+        }
     }
 }
